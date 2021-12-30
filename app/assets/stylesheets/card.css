@@ -1,0 +1,21 @@
+.card {
+  padding: 2rem;
+  box-shadow: 0 4px 8px 0 #00000033;
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 #00000033;
+}
+
+@media (prefers-color-scheme: dark) {
+  .card {
+    padding: 2rem;
+    box-shadow: 0 4px 8px 0 #63626233;
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 16px 0 #63626233;
+  }
+}

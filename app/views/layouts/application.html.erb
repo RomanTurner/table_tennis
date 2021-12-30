@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TablePractice</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body>
+    <%= render 'headers/navbar' %>
+    <turbo-frame id="flash">
+      <%= render 'shared/flash' %>
+    </turbo-frame>
+    <%= yield %>
+  </body>
+</html>

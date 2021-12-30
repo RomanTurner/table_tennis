@@ -1,0 +1,28 @@
+<tr scope="row">
+  <td>
+    <%= index += 1 %>
+  </td>
+  <td>
+    <div class="form-check">
+      <%= check_box_tag "ids[]", lead.id, false, data: { bulk_select_target: "checkbox" } %>
+      <label class="form-check-label"></label>
+    </div>
+  </td>
+  <td>
+    <%= link_to lead_path(lead), style: "text-decoration: none" do %>
+      <%= lead.name.humanize %>
+    <% end %>
+  </td>
+  <td><%= lead.email %></td>
+  <td><%= lead.gender %></td>
+  <td><%= lead.hobby %></td>
+  <td>
+    <%= link_to "Edit", edit_lead_path(lead) %>
+  </td>
+  <td>
+    <%= link_to "Show", lead_path(lead) %>
+  </td>
+  <td>
+    <%= button_to "Destroy", lead, method: :delete %>
+  </td>
+</tr>

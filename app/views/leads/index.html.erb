@@ -1,0 +1,27 @@
+<h1>Leads</h1>
+<div class="table-container">
+  <%== pagy_nav(@pagy) %>
+  <div
+    data-controller="bulk-select"
+    data-bulk-select-url-value="<%= list_leads_url %>"
+  >
+    <div class="flex-group">
+      <div class="input-group">
+        <%= link_to "Add to List", "#", data: { action: "click->bulk-select#addToList" } %>
+        <select class="form-select" aria-label="available lists">
+          <% List.all.reverse.each do |list| %>
+            <option data-bulk-select-target="id" value="<%= list.id %>">
+              <%= list.title %>
+            </option>
+          <% end %>
+        </select>
+      </div>
+      <%= search_form_for @q, url: leads_path, class: "input-group" do |f| %>
+        <%= f.label :name_or_gender_or_email_or_hobby_cont, "Email/Name" %>
+        <%= f.search_field :name_or_gender_or_email_or_hobby_cont %>
+        <%= f.submit class: "btn btn-primary" %>
+      <% end %>
+    </div>
+    <%= render "table", { q: @q, leads: @leads } %>
+  </div>
+</div>

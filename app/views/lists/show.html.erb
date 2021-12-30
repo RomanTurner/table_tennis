@@ -1,0 +1,21 @@
+<h1>List: <%= @list.title%> </h1>
+<div class="table-container" >
+  <%== pagy_nav(@pagy) %>
+  <div
+    data-controller="bulk-select"
+    data-bulk-select-url-value="<%= bulk_update_lists_path %>"
+  >
+    <option data-bulk-select-target="id" selected value="<%= @list.id %>" style="display: none"></option>
+    <div class="flex-group">
+      <div class="input-group">
+        <%= link_to "Remove from List", "#", data: { action: "click->bulk-select#removeFromList" } %>
+      </div>
+      <%= search_form_for @q, url: leads_path, class: "input-group" do |f| %>
+        <%= f.label :name_or_gender_or_email_or_hobby_cont, "Email/Name" %>
+        <%= f.search_field :name_or_gender_or_email_or_hobby_cont %>
+        <%= f.submit class: "btn btn-primary" %>
+      <% end %>
+    </div>
+    <%= render "leads/table", { q: @q, leads: @leads } %>
+  </div>
+</div>

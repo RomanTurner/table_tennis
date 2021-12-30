@@ -1,0 +1,40 @@
+<table>
+  <div>
+    <%= check_box_tag nil, nil, false, data: { bulk_select_target: "checkboxAll" } %>
+    <label>
+      Select All
+    </label>
+  </div>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Select</th>
+      <th scope="col">
+        <%= sort_link(q, :name) do %>
+          Name
+        <% end %>
+      </th>
+      <th scope="col">
+        <%= sort_link(q, :email) do %>
+          Email
+        <% end %>
+      </th>
+      <th scope="col">
+        <%= sort_link(q, :gender) do %>
+          Gender
+        <% end %>
+      </th>
+      <th scope="col">
+        <%= sort_link(q, :hobby) do %>
+          Hobby
+        <% end %>
+      </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% leads.each_with_index do |lead, index| %>
+      <%= render 'leads/tr', { lead: lead, index: index } %>
+    <% end %>
+  </tbody>
+</table>

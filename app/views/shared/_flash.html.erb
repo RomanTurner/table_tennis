@@ -1,0 +1,7 @@
+<div class="flash-messages">
+  <% flash.each do |type, message| %>
+    <div class="flash-message" data-controller="confetti">
+      <p style="color: green"><%= message %></p>
+    </div>
+  <% end %>
+</div>

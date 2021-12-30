@@ -1,0 +1,40 @@
+.page.active {
+  border: none;
+  border-radius: 5px;
+  background: var(--accent);
+  font-size: 1rem;
+  color: var(--bg);
+  padding: 0.7rem 0.9rem;
+  margin: 0.5rem 0;
+  transition: 0.4s;
+}
+
+.gap {
+  font-size: 4em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .page.active {
+    border: none;
+    border-radius: 5px;
+    background: var(--accent);
+    font-size: 1rem;
+    color: var(--bg);
+    padding: 0.7rem 0.9rem;
+    margin: 0.5rem 0;
+    transition: 0.4s;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .page.active {
+    border: none;
+    border-radius: 5px;
+    background: var(--accent);
+    font-size: 1rem;
+    color: var(--text);
+    padding: 0.7rem 0.9rem;
+    margin: 0.5rem 0;
+    transition: 0.4s;
+  }
+}
